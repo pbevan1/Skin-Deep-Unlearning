@@ -16,9 +16,6 @@ def criterion_func(df):
     elif args.instrument and args.rulers:
         lst = df['instrument'].value_counts().sort_index().tolist()
         lst2 = df['scale'].value_counts().sort_index().tolist()
-    elif args.sktone:
-        lst = df['fitzpatrick'].value_counts().sort_index().tolist()
-        lst2 = df['fitzpatrick'].value_counts().sort_index().tolist()  # placeholder
     else:
         lst = df['marked'].value_counts().sort_index().tolist()
         lst2 = df['scale'].value_counts().sort_index().tolist()  # placeholder

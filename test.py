@@ -21,9 +21,7 @@ inv_normalize = transforms.Normalize(
 
 # SALIENCY MAP
 def saliency(index, df, transforms_val):
-    if args.sktone and args.split_skin_types:
-        test_names = ['Types 3&4 Skin', 'Types 5&6 Skin']
-    elif args.tune:
+    if args.tune:
         test_names = ['val_data']
     elif args.heid_test_marked:
         test_names = ['blank', 'marked']
@@ -132,9 +130,7 @@ def saliency(index, df, transforms_val):
 
 def test(index, df, mel_idx, transforms_val):
     # Setting test sets based on arguments
-    if args.sktone and args.split_skin_types:
-        test_names = ['Types 3&4 Skin', 'Types 5&6 Skin']
-    elif args.tune:
+    if args.tune:
         test_names = ['val_data']
     elif args.heid_test_marked:
         test_names = ['blank', 'marked']
@@ -332,9 +328,7 @@ def cv_scores(df_train, mel_idx, transforms_val, transforms_marked):
 # Plotting ROC curves of results in style of ggplot
 def ROC_curve(roc_plt_lst):
     # Setting test data based on args passed
-    if args.sktone and args.split_skin_types:
-        test_names = ['Types 3&4 Skin', 'Types 5&6 Skin']
-    elif args.tune:
+    if args.tune:
         test_names = ['val_data']
     elif args.heid_test_marked:
         test_names = ['plain', 'marked']
