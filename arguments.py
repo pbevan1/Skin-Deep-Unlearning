@@ -11,7 +11,6 @@ def parse_args():
     parser.add_argument('--dataset', type=str, help='choose from ISIC or Fitzpatrick17k', default='ISIC')
     parser.add_argument('--heid-test_marked', help='Use when testing marking bias', action='store_true')
     parser.add_argument('--heid-test_rulers', help='Use when testing ruler bias', action='store_true')
-    parser.add_argument('--split-skin-types', action='store_true')
     parser.add_argument('--tune', help='Use for tuning, tests only val set', action='store_true')
     # Setting debiasing technique
     parser.add_argument('--debias-config', type=str, help='choose from baseline, LNTL, TABE, both,'
@@ -23,7 +22,6 @@ def parse_args():
     parser.add_argument('--marked', help='uses marking labels for aux head', action='store_true')
     parser.add_argument('--rulers', help='uses ruler labels for aux head', action='store_true')
     parser.add_argument('--instrument', help='uses instrument labels for aux head', action='store_true')
-    parser.add_argument('--sktone', help='uses skin type labels for aux head', action='store_true')
     # Setting hyperparameters
     parser.add_argument('--seed', help='sets all random seeds', type=int, default=0)
     parser.add_argument('--batch-size', help='sets batch size', type=int, default=64)

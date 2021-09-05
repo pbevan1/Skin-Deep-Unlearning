@@ -302,12 +302,10 @@ def main():
 
     # Loading training, validation and test dataframes
     df_train, df_val, df_test_blank, df_test_marked, df_test_rulers, df_test_atlasD, df_test_atlasC, df_test_ASAN,\
-        df_test_MClassD, df_test_MClassC, df_34, df_56, mel_idx = get_df()
+        df_test_MClassD, df_test_MClassC, mel_idx = get_df()
 
     # Selecting test data based on experiment
-    if args.sktone and args.split_skin_types:
-        df_test_lst = [df_34, df_56]
-    elif args.tune:
+    if args.tune:
         df_test_lst = [df_val]
     elif args.heid_test_marked:
         df_test_lst = [df_test_blank, df_test_marked]
