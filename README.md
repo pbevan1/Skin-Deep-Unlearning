@@ -9,6 +9,13 @@ as well as an additional hybrid of the two (CLGR). We demonstrate that the biase
 can be partially mitigated using these techniques. We also demonstrate, across several test sets, the generalisation
 benefits of using these same techniques to remove spurious variation relating to the imaging instrument used to capture the lesion images.
 
+<br>
+
+![Exemplar Results](https://github.com/pbevan1/Skin-Deep-Unlearning/blob/master/images/SM_RU.pdf)
+Examples of artefacts seen in ISIC 2020 data. Top row shows images with surgical markings present, bottom row shows images with rulers present.
+
+---
+---
 ## Usage
 
 ### Software used (see `requirements.txt` for package requirements)
@@ -21,7 +28,8 @@ Nvidia Driver Version: 465.31
 
 PyTorch 1.8.1
 
-### Downloading data
+---
+### Downloading the data
 
 A free account must be created to download The Interactive Atlas of Dermoscopy, available at this link:
 [https://derm.cs.sfu.ca/Download.html](https://derm.cs.sfu.ca/Download.html). Place the `release_v0.zip` file into the
@@ -50,7 +58,7 @@ into `data/images` as shown below. The manually downloaded Atlas data (`data/raw
 processed by this script. Note this script clears the `data/images` directory before populating it, so if you want to put other
 images in there, do this after running the `download.py` script.
 
-**NOTE**: The surgical markings/rulers test set from Heidelberg University [[3]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6694463/) is not publicly available. Refer to the paper for contact details of the corresponding author to request data if necessary.
+**NOTE**: The surgical markings/rulers test set from Heidelberg University [[3]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6694463/) is not publicly available.
 
 The data directory should now look as follows:
 <pre>
@@ -80,6 +88,7 @@ Interactive Atlas of Dermoscopy: [https://derm.cs.sfu.ca/Welcome.html](https://d
 ASAN Test set: [https://figshare.com/articles/code/Caffemodel_files_and_Python_Examples/5406223](https://figshare.com/articles/code/Caffemodel_files_and_Python_Examples/5406223)  
 MClassC/MClassD: [https://skinclass.de/mclass/](https://skinclass.de/mclass/)
 
+---
 ### Training and evaluation
 
 Training commands for the main experiments from the paper are below. Please see `arguments.py` for the full range of arguments if you wish to devise alternative experiments. Test results (plots, logs and weights) will autosave into the `results` directory, in subdirectories specific to the test number. Please contact me if you require trained weights for any model in the report.
