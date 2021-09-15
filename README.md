@@ -1,4 +1,4 @@
-# Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification
+# Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification [[PDF](INSERT ARXIV LINK HERE)]
 
 ## Method:
  *"Convolutional Neural Networks have demonstrated dermatologist-level performance in the classification of melanoma and
@@ -112,7 +112,7 @@ Some useful arguments to tweak the below commands:
 * Add `--cv` to perform cross validation.
 * Add `--test-only` if you wish to load weights and run testing only (loads weights of whatever `--test-no` argument is passed).
 
-***ResNeXt-101 instrument debiasing for domain generalisation:***
+***Instrument debiasing for domain generalisation:***
 <pre>
 <b>Baseline:</b> python train.py --test-no 9 --n-epochs 4 --CUDA_VISIBLE_DEVICES 0,1
 <b>LNTL:</b> python train.py --test-no 10 --n-epochs 4 --debias-config LNTL --GRL --instrument --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8
@@ -120,7 +120,7 @@ Some useful arguments to tweak the below commands:
 <b>CLGR:</b> python train.py --test-no 12 --n-epochs 4 --debias-config TABE --GRL --instrument --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8
 </pre>
 
-***ResNeXt-101 surgical marking bias removal (REQUIRES PRIVATE HEIDELBERG UNIVERSITY DATASET):***
+***Surgical marking bias removal (REQUIRES PRIVATE HEIDELBERG UNIVERSITY DATASET):***
 <pre>
 <b>Baseline:</b> python train.py --test-no 1 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --marked --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_marked
 <b>LNTL:</b> python train.py --test-no 2 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --debias-config LNTL --GRL --marked --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_marked
@@ -128,7 +128,7 @@ Some useful arguments to tweak the below commands:
 <b>CLGR:</b> python train.py --test-no 4 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --debias-config TABE --GRL --marked --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_marked
 </pre>
 
-***ResNeXt-101 ruler bias removal (REQUIRES PRIVATE HEIDELBERG UNIVERSITY DATASET):***
+***Ruler bias removal (REQUIRES PRIVATE HEIDELBERG UNIVERSITY DATASET):***
 <pre>
 <b>Baseline:</b> python train.py --test-no 5 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --rulers --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_rulers
 <b>LNTL:</b> python train.py --test-no 6 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --debias-config LNTL --GRL --rulers --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_rulers
@@ -138,7 +138,7 @@ Some useful arguments to tweak the below commands:
 
 <br>
 
-***ResNeXt-101 double headers (removing instrument and surgical marking bias):***
+***Double headers (removing instrument and surgical marking bias):***
 <pre>
 <b>TABE (instrument) + TABE (marks):</b> python train.py --test-no 21 --n-epochs 4 --debias-config doubleTABE --instrument --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8 --lr-class 0.0003
 <b>CLGR (instrument) + CLGR (marks):</b> python train.py --test-no 22 --n-epochs 4 --debias-config doubleTABE --GRL --instrument --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8 --lr-class 0.0003
@@ -149,7 +149,7 @@ Some useful arguments to tweak the below commands:
 <b>LNTL (instrument) + LNTL (marks):</b> python train.py --test-no 27 --n-epochs 4 --debias-config doubleLNTL --instrument --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8 --lr-class 0.0003
 </pre>
 
-***ResNeXt-101 double headers (removing instrument and ruler bias):***
+***Double headers (removing instrument and ruler bias):***
 <pre>
 <b>TABE (instrument) + TABE (rulers):</b> python train.py --test-no 21 --n-epochs 4 --debias-config doubleTABE --instrument --rulers --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8 --lr-class 0.0003
 <b>CLGR (instrument) + CLGR (rulers):</b> python train.py --test-no 22 --n-epochs 4 --debias-config doubleTABE --GRL --instrument --rulers --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8 --lr-class 0.0003
