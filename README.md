@@ -10,8 +10,7 @@ can be partially mitigated using these techniques. We also demonstrate, across s
 benefits of using these same techniques to remove spurious variation relating to the imaging instrument used to capture the lesion images.
 
 <br>
-
-![Exemplar Results](https://github.com/pbevan1/Skin-Deep-Unlearning/blob/master/images/SM_RU.pdf)
+![Exemplar Results](https://github.com/pbevan1/Skin-Deep-Unlearning/blob/main/images/SM_RU.png)
 Examples of artefacts seen in ISIC 2020 data. Top row shows images with surgical markings present, bottom row shows images with rulers present.
 
 ---
