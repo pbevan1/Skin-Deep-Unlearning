@@ -111,15 +111,15 @@ Some useful arguments to tweak the below commands:
 * To run on different architechtures, use `--arch` argument to choose from `resnext101`, `enet`, `resnet101`, `densenet` or `inception` (default=`resnext101`).
 * Add `--cv` to perform cross validation.
 * Add `--test-only` if you wish to load weights and run testing only (loads weights of whatever `--test-no` argument is passed).
----
-***Unlearning instruments for generalisation:***
+
+***Instrument debiasing for domain generalisation:***
 <pre>
 <b>Baseline:</b> python train.py --test-no 9 --n-epochs 4 --CUDA_VISIBLE_DEVICES 0,1
 <b>LNTL:</b> python train.py --test-no 10 --n-epochs 4 --debias-config LNTL --GRL --instrument --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8
 <b>TABE:</b> python train.py --test-no 11 --n-epochs 4 --debias-config TABE --instrument --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8
 <b>CLGR:</b> python train.py --test-no 12 --n-epochs 4 --debias-config TABE --GRL --instrument --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8
 </pre>
----
+
 ***Surgical marking bias removal (REQUIRES PRIVATE HEIDELBERG UNIVERSITY DATASET):***
 <pre>
 <b>Baseline:</b> python train.py --test-no 1 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --marked --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_marked
@@ -127,7 +127,7 @@ Some useful arguments to tweak the below commands:
 <b>TABE:</b> python train.py --test-no 3 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --debias-config TABE --marked --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_marked
 <b>CLGR:</b> python train.py --test-no 4 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --debias-config TABE --GRL --marked --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_marked
 </pre>
----
+
 ***Ruler bias removal (REQUIRES PRIVATE HEIDELBERG UNIVERSITY DATASET):***
 <pre>
 <b>Baseline:</b> python train.py --test-no 5 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --rulers --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_rulers
@@ -135,7 +135,7 @@ Some useful arguments to tweak the below commands:
 <b>TABE:</b> python train.py --test-no 7 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --debias-config TABE --rulers --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_rulers
 <b>CLGR:</b> python train.py --test-no 8 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --debias-config TABE --GRL --rulers --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_rulers
 </pre>
----
+
 ### Double header experiments for generalisation
 
 ***ResNeXt-101 double headers (removing instrument and surgical marking bias):***
@@ -148,7 +148,7 @@ Some useful arguments to tweak the below commands:
 <b>TABE (instrument) + LNTL (marks):</b> python train.py --test-no 26 --n-epochs 4 --debias-config both --instrument --CUDA_VISIBLE_DEVICES 0,1 --num-aux2 8 --switch-heads --lr-class 0.0003
 <b>LNTL (instrument) + LNTL (marks):</b> python train.py --test-no 27 --n-epochs 4 --debias-config doubleLNTL --instrument --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8 --lr-class 0.0003
 </pre>
----
+
 ***ResNeXt-101 double headers (removing instrument and ruler bias):***
 <pre>
 <b>TABE (instrument) + TABE (rulers):</b> python train.py --test-no 21 --n-epochs 4 --debias-config doubleTABE --instrument --rulers --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8 --lr-class 0.0003
