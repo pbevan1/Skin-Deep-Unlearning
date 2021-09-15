@@ -116,8 +116,10 @@ bar_marked = ggplot(df_bar_marked, aes(x=test, y=AUC_mean, fill=model)) +
   geom_errorbar(aes(ymin=AUC_mean-AUC_std, ymax=AUC_mean+AUC_std), width=.2,position=position_dodge(.9))+
   scale_fill_manual(values = c("#D55E00", "#0072B2", "#E69F00", "#CC79A7")) +
   labs(title="", x="test set", y = "AUC") +
-  coord_cartesian(ylim=c(0.80,1.0)) + 
-  theme(text = element_text(size=14))
+  coord_cartesian(ylim=c(0.80,1.03)) + 
+  theme(text = element_text(size=14)) + 
+  geom_text(aes(label=round(AUC_mean,3)),position=position_dodge(0.9),vjust=-0, size=2.8)
+bar_marked
 ggsave(filename="../results/plots/Figs/bar_marked2.pdf", plot = bar_marked,
        width = 4.97, 
        height = 3.64, 
