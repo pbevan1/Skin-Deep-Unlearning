@@ -6,9 +6,16 @@ debiasing techniques: 'Learning Not to Learn'
 (LNTL) and 'Turning a Blind Eye' [[2]](https://www.robots.ox.ac.uk/~vgg/publications/2018/Alvi18/alvi18.pdf) (TABE),
 as well as an additional hybrid of the two (CLGR). We demonstrate that the biases presented in
 [[3]](https://jamanetwork.com/journals/jamadermatology/fullarticle/2740808) and [[4]](https://www.ejcancer.com/article/S0959-8049(20)31420-9/pdf)
-can be partially mitigated using these techniques. We also demonstrate, across several test sets, the generalisation
+can be reasonably mitigated using these techniques. We also demonstrate, across several test sets, the generalisation
 benefits of using these same techniques to remove spurious variation relating to the imaging instrument used to capture the lesion images.
 
+<br>
+
+![Exemplar Results](https://github.com/pbevan1/Skin-Deep-Unlearning/blob/main/images/SM_RU.png)
+Examples of artefacts seen in ISIC 2020 data. Top row shows images with surgical markings present, bottom row shows images with rulers present.
+
+---
+---
 ## Usage
 
 ### Software used (see `requirements.txt` for package requirements)
@@ -21,7 +28,8 @@ Nvidia Driver Version: 465.31
 
 PyTorch 1.8.1
 
-### Downloading data
+---
+### Downloading the data
 
 A free account must be created to download The Interactive Atlas of Dermoscopy, available at this link:
 [https://derm.cs.sfu.ca/Download.html](https://derm.cs.sfu.ca/Download.html). Place the `release_v0.zip` file into the
@@ -48,9 +56,9 @@ Run `download.py` to download, crop and resize the ISIC, ASAN, MClass clinical, 
 datasaets. Have patience as it may take around an hour to complete. The 256x256 resized images are automatically placed
 into `data/images` as shown below. The manually downloaded Atlas data (`data/raw_images/release_v0.zip`) will also be
 processed by this script. Note this script clears the `data/images` directory before populating it, so if you want to put other
-images in there, do this after running the `download.py` script.
+images in there, do this *after* running the `download.py` script.
 
-**NOTE**: The surgical markings/rulers test set from Heidelberg University [[3]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6694463/) is not publicly available. Refer to the paper for contact details of the corresponding author to request data if necessary.
+**NOTE**: The surgical markings/rulers test set from Heidelberg University [[3]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6694463/) is not publicly available.
 
 The data directory should now look as follows:
 <pre>
@@ -80,16 +88,17 @@ Interactive Atlas of Dermoscopy: [https://derm.cs.sfu.ca/Welcome.html](https://d
 ASAN Test set: [https://figshare.com/articles/code/Caffemodel_files_and_Python_Examples/5406223](https://figshare.com/articles/code/Caffemodel_files_and_Python_Examples/5406223)  
 MClassC/MClassD: [https://skinclass.de/mclass/](https://skinclass.de/mclass/)
 
+---
 ### Training and evaluation
 
-Training commands for the main experiments from the paper are below. Please see `arguments.py` for the full range of arguments if you wish to devise alternative experiments. Test results (plots, logs and weights) will autosave into the `results` directory, in subdirectories specific to the test number. Please contact me if you require trained weights for any model in the report.
+Training commands for the main experiments from the paper are below. Please see `arguments.py` for the full range of arguments if you wish to devise alternative experiments. Test results (plots, logs and weights) will autosave into the `results` directory, in subdirectories specific to the test number. Please contact me if you require trained weights for any model in the paper.
 
 Some useful arguments to tweak the below commands:
 * Adjust `--CUDA_VISIBLE_DEVICES` and `num-workers` to suit the available GPUs and CPU cores respectively on your machine.
-* To run in debug mode add `--DEBUG` (limits epochs to 3 batches)
-* To rerun with different random seeds, use `--seed` argument
-* To run on different architechtures, use `--arch` argument to choose from `resnext101`, `enet`, `resnet101`, `densenet` or `inception` (default=`resnext101`)
-* Add `--cv` to perform cross validation
+* To run in debug mode add `--DEBUG` (limits epochs to 3 batches).
+* To chnage the random seed (default 0), use `--seed` argument.
+* To run on different architechtures, use `--arch` argument to choose from `resnext101`, `enet`, `resnet101`, `densenet` or `inception` (default=`resnext101`).
+* Add `--cv` to perform cross validation.
 * Add `--test-only` if you wish to load weights and run testing only (loads weights of whatever `--test-no` argument is passed).
 
 ***Unlearning instruments for generalisation***
@@ -116,7 +125,7 @@ Some useful arguments to tweak the below commands:
 <b>CLGR:</b> python train.py --test-no 8 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --debias-config TABE --GRL --rulers --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_rulers
 </pre>
 
-#### Double header experiments for generalisation
+### Double header experiments for generalisation
 
 ***ResNeXt-101 double headers (removing instrument and surgical marking bias)***
 <pre>
