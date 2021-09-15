@@ -6,7 +6,7 @@ debiasing techniques: 'Learning Not to Learn'
 (LNTL) and 'Turning a Blind Eye' [[2]](https://www.robots.ox.ac.uk/~vgg/publications/2018/Alvi18/alvi18.pdf) (TABE),
 as well as an additional hybrid of the two (CLGR). We demonstrate that the biases presented in
 [[3]](https://jamanetwork.com/journals/jamadermatology/fullarticle/2740808) and [[4]](https://www.ejcancer.com/article/S0959-8049(20)31420-9/pdf)
-can be partially mitigated using these techniques. We also demonstrate, across several test sets, the generalisation
+can be reasonably mitigated using these techniques. We also demonstrate, across several test sets, the generalisation
 benefits of using these same techniques to remove spurious variation relating to the imaging instrument used to capture the lesion images.
 
 <br>
