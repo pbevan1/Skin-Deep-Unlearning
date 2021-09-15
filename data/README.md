@@ -47,5 +47,6 @@ If you do wish to manually download the datasets, they are available at the foll
 ISIC 2020 data: [https://www.kaggle.com/cdeotte/jpeg-melanoma-256x256](https://www.kaggle.com/cdeotte/jpeg-melanoma-256x256)  
 ISIC 2019/2018/2017 data: [https://www.kaggle.com/cdeotte/jpeg-isic2019-256x256](https://www.kaggle.com/cdeotte/jpeg-isic2019-256x256)  
 Interactive Atlas of Dermoscopy: [https://derm.cs.sfu.ca/Welcome.html](https://derm.cs.sfu.ca/Welcome.html)  
-ASAN Test set: [https://figshare.com/articles/code/Caffemodel_files_and_Python_Examples/5406223](https://figshare.com/articles/code/Caffemodel_files_and_Python_Examples/5406223) 
+ASAN Test set: [https://figshare.com/articles/code/Caffemodel_files_and_Python_Examples/5406223](https://figshare.com/articles/code/Caffemodel_files_and_Python_Examples/5406223)
+
 MClassC/MClassD: [https://skinclass.de/mclass/](https://skinclass.de/mclass/)
