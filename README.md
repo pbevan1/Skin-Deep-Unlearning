@@ -136,6 +136,8 @@ Some useful arguments to tweak the below commands:
 <b>CLGR:</b> python train.py --test-no 8 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --debias-config TABE --GRL --rulers --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_rulers
 </pre>
 
+<br>
+
 #### **Double header experiments for generalisation**
 
 ***ResNeXt-101 double headers (removing instrument and surgical marking bias):***
