@@ -19,13 +19,9 @@ as well as an additional hybrid of the two (CLGR) . We show that the biases intr
 ![Exemplar Results](https://github.com/pbevan1/Skin-Deep-Unlearning/blob/main/images/SM_RU.png)
 Examples of artefacts seen in ISIC 2020 data. Top row shows images with surgical markings present, bottom row shows images with rulers present.
 
-![Exemplar Results](https://github.com/pbevan1/Skin-Deep-Unlearning/blob/main/images/LNTL_mine-01.png)
-'Learning Not to Learn' architecture. Feature extractor, f, is implemented as a convolutional architecture
-such as ResNeXt or EfficientNet in this work. 'fc' denotes a fully connected layer.
-
-![Exemplar Results](https://github.com/pbevan1/Skin-Deep-Unlearning/blob/main/images/TABE_mine2-01.png)
-'Turning a Blind Eye' generic architecture. Feature extractor, f, is implemented as a convolutional architecture such
-as ResNeXt or EfficientNet in this work. 'fc' denotes a fully connected layer.
+![architectures](https://github.com/pbevan1/Skin-Deep-Unlearning/blob/main/images/LNTL_mine-01.png)
+'Learning Not to Learn' architecture (left) and 'Turning a Blind Eye' architecture (right). Feature extractor, f, is
+implemented as a convolutional architecture such as ResNeXt or EfficientNet in this work. 'fc' denotes a fully connected layer.
 
 ---
 ---
