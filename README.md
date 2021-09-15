@@ -1,6 +1,7 @@
 # Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification
 
- Convolutional Neural Networks have demonstrated dermatologist-level performance in the classification of melanoma and
+## Method:
+ *"Convolutional Neural Networks have demonstrated dermatologist-level performance in the classification of melanoma and
  other skin lesions, but prediction irregularities due to bias are an issue that should be addressed before widespread
  deployment is possible. In this work, we robustly remove bias and spurious variation from an automated melanoma
  classification pipeline using two leading bias 'unlearning' techniques: 'Learning Not to Learn'
@@ -12,8 +13,9 @@ as well as an additional hybrid of the two (CLGR) . We show that the biases intr
  imaging instrument used to capture lesion images. The novel contributions of this work include a comparison of
  different debiasing techniques for artefact bias removal and the concept of instrument bias 'unlearning' for
  domain generalisation in melanoma detection. Our experimental results provide evidence that the effect of each of the
- aforementioned biases are notably reduced, with different debiasing techniques excelling at different tasks.
+ aforementioned biases are notably reduced, with different debiasing techniques excelling at different tasks."*
 
+[[Bevan and Atapour-Abarghouei, 2021](INSERT ARXIV LINK HERE)]
 <br>
 
 ![Exemplar Results](https://github.com/pbevan1/Skin-Deep-Unlearning/blob/main/images/SM_RU.png)
@@ -25,7 +27,7 @@ implemented as a convolutional architecture such as ResNeXt or EfficientNet in t
 
 ---
 ---
-## Usage
+## Usage 
 
 ### Software used (see `requirements.txt` for package requirements)
 
@@ -109,34 +111,34 @@ Some useful arguments to tweak the below commands:
 * To run on different architechtures, use `--arch` argument to choose from `resnext101`, `enet`, `resnet101`, `densenet` or `inception` (default=`resnext101`).
 * Add `--cv` to perform cross validation.
 * Add `--test-only` if you wish to load weights and run testing only (loads weights of whatever `--test-no` argument is passed).
-
-***Unlearning instruments for generalisation***
+---
+***Unlearning instruments for generalisation:***
 <pre>
 <b>Baseline:</b> python train.py --test-no 9 --n-epochs 4 --CUDA_VISIBLE_DEVICES 0,1
 <b>LNTL:</b> python train.py --test-no 10 --n-epochs 4 --debias-config LNTL --GRL --instrument --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8
 <b>TABE:</b> python train.py --test-no 11 --n-epochs 4 --debias-config TABE --instrument --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8
 <b>CLGR:</b> python train.py --test-no 12 --n-epochs 4 --debias-config TABE --GRL --instrument --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8
 </pre>
-
-***Surgical marking bias removal (REQUIRES PRIVATE HEIDELBERG UNIVERSITY DATASET)***
+---
+***Surgical marking bias removal (REQUIRES PRIVATE HEIDELBERG UNIVERSITY DATASET):***
 <pre>
 <b>Baseline:</b> python train.py --test-no 1 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --marked --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_marked
 <b>LNTL:</b> python train.py --test-no 2 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --debias-config LNTL --GRL --marked --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_marked
 <b>TABE:</b> python train.py --test-no 3 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --debias-config TABE --marked --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_marked
 <b>CLGR:</b> python train.py --test-no 4 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --debias-config TABE --GRL --marked --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_marked
 </pre>
-
-***Ruler bias removal (REQUIRES PRIVATE HEIDELBERG UNIVERSITY DATASET)***
+---
+***Ruler bias removal (REQUIRES PRIVATE HEIDELBERG UNIVERSITY DATASET):***
 <pre>
 <b>Baseline:</b> python train.py --test-no 5 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --rulers --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_rulers
 <b>LNTL:</b> python train.py --test-no 6 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --debias-config LNTL --GRL --rulers --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_rulers
 <b>TABE:</b> python train.py --test-no 7 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --debias-config TABE --rulers --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_rulers
 <b>CLGR:</b> python train.py --test-no 8 --arch enet --enet-type efficientnet_b3 --n-epochs 15 --debias-config TABE --GRL --rulers --CUDA_VISIBLE_DEVICES 0,1 --skew --heid-test_rulers
 </pre>
-
+---
 ### Double header experiments for generalisation
 
-***ResNeXt-101 double headers (removing instrument and surgical marking bias)***
+***ResNeXt-101 double headers (removing instrument and surgical marking bias):***
 <pre>
 <b>TABE (instrument) + TABE (marks):</b> python train.py --test-no 21 --n-epochs 4 --debias-config doubleTABE --instrument --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8 --lr-class 0.0003
 <b>CLGR (instrument) + CLGR (marks):</b> python train.py --test-no 22 --n-epochs 4 --debias-config doubleTABE --GRL --instrument --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8 --lr-class 0.0003
@@ -146,8 +148,8 @@ Some useful arguments to tweak the below commands:
 <b>TABE (instrument) + LNTL (marks):</b> python train.py --test-no 26 --n-epochs 4 --debias-config both --instrument --CUDA_VISIBLE_DEVICES 0,1 --num-aux2 8 --switch-heads --lr-class 0.0003
 <b>LNTL (instrument) + LNTL (marks):</b> python train.py --test-no 27 --n-epochs 4 --debias-config doubleLNTL --instrument --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8 --lr-class 0.0003
 </pre>
-
-***ResNeXt-101 double headers (removing instrument and ruler bias)***
+---
+***ResNeXt-101 double headers (removing instrument and ruler bias):***
 <pre>
 <b>TABE (instrument) + TABE (rulers):</b> python train.py --test-no 21 --n-epochs 4 --debias-config doubleTABE --instrument --rulers --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8 --lr-class 0.0003
 <b>CLGR (instrument) + CLGR (rulers):</b> python train.py --test-no 22 --n-epochs 4 --debias-config doubleTABE --GRL --instrument --rulers --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8 --lr-class 0.0003
@@ -157,3 +159,22 @@ Some useful arguments to tweak the below commands:
 <b>TABE (instrument) + LNTL (rulers):</b> python train.py --test-no 26 --n-epochs 4 --debias-config both --instrument --rulers --CUDA_VISIBLE_DEVICES 0,1 --num-aux2 8 --switch-heads --lr-class 0.0003
 <b>LNTL (instrument) + LNTL (rulers):</b> python train.py --test-no 27 --n-epochs 4 --debias-config doubleLNTL --instrument --rulers --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8 --lr-class 0.0003
 </pre>
+---
+This work is created as part of the project published in the following. The model has been re-trained to provide better quality visual results.
+## Reference:
+
+[Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification](INSERT ARXIV LINK HERE)
+(P. Bevan, A. Atapour-Abarghouei) [[pdf](INSERT ARXIV LINK HERE)]
+
+```
+@InProceedings{,
+  author =,
+  title =,
+  booktitle=,
+  pages=,
+  year =,
+  publisher = 
+}
+
+```
+---
