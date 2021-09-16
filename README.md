@@ -29,7 +29,7 @@ implemented as a convolutional architecture such as ResNeXt or EfficientNet in t
 ---
 ## Usage 
 
-### Software used (see `requirements.txt` for package requirements)
+### Software used (see `requirements.txt` for package requirements):
 
 Python 3.9.6
 
@@ -40,7 +40,7 @@ Nvidia Driver Version: 465.31
 PyTorch 1.8.1
 
 ---
-### Downloading the data
+### Downloading the data:
 
 A free account must be created to download The Interactive Atlas of Dermoscopy, available at this link:
 [https://derm.cs.sfu.ca/Download.html](https://derm.cs.sfu.ca/Download.html). Place the `release_v0.zip` file into the
@@ -100,7 +100,7 @@ ASAN Test set: [https://figshare.com/articles/code/Caffemodel_files_and_Python_E
 MClassC/MClassD: [https://skinclass.de/mclass/](https://skinclass.de/mclass/)
 
 ---
-### Training and evaluation
+### Training and evaluation:
 
 Training commands for the main experiments from the paper are below. Please see `arguments.py` for the full range of arguments if you wish to devise alternative experiments. Test results (plots, logs and weights) will autosave into the `results` directory, in subdirectories specific to the test number. Please contact me if you require trained weights for any model in the paper.
 
