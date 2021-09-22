@@ -175,6 +175,5 @@ This work is created as part of the project published in the following. The mode
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
-
 ```
 ---
