@@ -160,7 +160,7 @@ Some useful arguments to tweak the below commands:
 <b>LNTL (instrument) + LNTL (rulers):</b> python train.py --test-no 27 --n-epochs 4 --debias-config doubleLNTL --instrument --rulers --CUDA_VISIBLE_DEVICES 0,1 --num-aux 8 --lr-class 0.0003
 </pre>
 ---
-This work is created as part of the project published in the following. The model has been re-trained to provide better quality visual results.
+
 ## Reference:
 
 [Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification](https://arxiv.org/pdf/2109.09818.pdf)
