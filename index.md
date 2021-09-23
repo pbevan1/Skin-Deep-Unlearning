@@ -22,7 +22,6 @@ as well as an additional hybrid of the two (CLGR) . We show that the biases intr
 
 ---
 
-This work is created as part of the project published in the following. The model has been re-trained to provide better quality visual results.
 ## Reference:
 
 [Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification](https://arxiv.org/pdf/2109.09818.pdf)
