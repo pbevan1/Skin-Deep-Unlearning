@@ -1,6 +1,6 @@
-# Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification [[PDF](https://arxiv.org/pdf/2109.09818.pdf)]
+# Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification
 
-**For code go to:** https://github.com/pbevan1/Skin-Deep-Unlearning
+## **For code go to:** [https://github.com/pbevan1/Skin-Deep-Unlearning](https://github.com/pbevan1/Skin-Deep-Unlearning)
 
 ## Method:
  *"Convolutional Neural Networks have demonstrated dermatologist-level performance in the classification of melanoma and
@@ -19,8 +19,9 @@ as well as an additional hybrid of the two (CLGR) . We show that the biases intr
 
 [[Bevan and Atapour-Abarghouei, 2021](https://arxiv.org/pdf/2109.09818.pdf)]
 <br>
+
 ---
----
+
 This work is created as part of the project published in the following. The model has been re-trained to provide better quality visual results.
 ## Reference:
 
