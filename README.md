@@ -1,4 +1,4 @@
-# [ACCEPTED TO ICML2022] Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification [[PDF](https://arxiv.org/pdf/2109.09818.pdf)]
+# [ICML2022 ACCEPTED PAPER] Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification [[PDF](https://arxiv.org/pdf/2109.09818.pdf)]
 
 ## Method:
  *"Convolutional Neural Networks have demonstrated dermatologist-level performance in the classification of melanoma and
