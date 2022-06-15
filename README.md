@@ -15,7 +15,7 @@ as well as an additional hybrid of the two (CLGR) . We show that the biases intr
  domain generalisation in melanoma detection. Our experimental results provide evidence that the effect of each of the
  aforementioned biases are notably reduced, with different debiasing techniques excelling at different tasks."*
 
-[[Bevan and Atapour-Abarghouei, 2021](https://arxiv.org/pdf/2109.09818.pdf)]
+[[Bevan and Atapour-Abarghouei, 2021](https://arxiv.org/abs/2109.09818)]
 <br>
 
 ![Exemplar Results](https://github.com/pbevan1/Skin-Deep-Unlearning/blob/main/images/SM_RU.png)
@@ -163,7 +163,7 @@ Some useful arguments to tweak the below commands:
 
 ## Reference:
 
-[Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification](https://arxiv.org/pdf/2109.09818.pdf)
+[Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification](https://arxiv.org/abs/2109.09818)
 (P. Bevan, A. Atapour-Abarghouei) [[pdf](https://arxiv.org/pdf/2109.09818.pdf)]
 
 ```
