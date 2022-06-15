@@ -1,6 +1,4 @@
-# Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification [[PDF](https://arxiv.org/pdf/2109.09818.pdf)]
-
-<a href="http://example.com/" target="_blank">example</a>
+# Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification [<a href="https://arxiv.org/pdf/2109.09818.pdf" target="_blank">PDF</a>]
 
 ## Method:
  *"Convolutional Neural Networks have demonstrated dermatologist-level performance in the classification of melanoma and
