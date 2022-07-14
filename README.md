@@ -1,4 +1,4 @@
-# Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification [[PDF](https://arxiv.org/pdf/2109.09818.pdf)]
+# Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification [[PDF](https://proceedings.mlr.press/v162/bevan22a/bevan22a.pdf)]
 
 ## Method:
  *"Convolutional Neural Networks have demonstrated dermatologist-level performance in the classification of melanoma and
@@ -15,7 +15,7 @@ as well as an additional hybrid of the two (CLGR) . We show that the biases intr
  domain generalisation in melanoma detection. Our experimental results provide evidence that the effect of each of the
  aforementioned biases are notably reduced, with different debiasing techniques excelling at different tasks."*
 
-[[Bevan and Atapour-Abarghouei, 2021](https://arxiv.org/abs/2109.09818)]
+[[Bevan and Atapour-Abarghouei, 2021](https://proceedings.mlr.press/v162/bevan22a.html)]
 <br>
 
 ![Exemplar Results](https://github.com/pbevan1/Skin-Deep-Unlearning/blob/main/images/SM_RU.png)
@@ -163,17 +163,25 @@ Some useful arguments to tweak the below commands:
 
 ## Reference:
 
-[Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification](https://arxiv.org/abs/2109.09818)
-(P. Bevan, A. Atapour-Abarghouei) [[pdf](https://arxiv.org/pdf/2109.09818.pdf)]
+[Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification](https://proceedings.mlr.press/v162/bevan22a.html)
+(P. Bevan, A. Atapour-Abarghouei) [[pdf](https://proceedings.mlr.press/v162/bevan22a/bevan22a.pdf)]
 
 ```
-@misc{bevan2021skin,
-      title={Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification}, 
-      author={Peter Bevan and Amir Atapour-Abarghouei},
-      year={2021},
-      eprint={2109.09818},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+
+@InProceedings{pmlr-v162-bevan22a,
+  title = 	 {Skin Deep Unlearning: Artefact and Instrument Debiasing in the Context of Melanoma Classification},
+  author =       {Bevan, Peter and Atapour-Abarghouei, Amir},
+  booktitle = 	 {Proceedings of the 39th International Conference on Machine Learning},
+  pages = 	 {1874--1892},
+  year = 	 {2022},
+  editor = 	 {Chaudhuri, Kamalika and Jegelka, Stefanie and Song, Le and Szepesvari, Csaba and Niu, Gang and Sabato, Sivan},
+  volume = 	 {162},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {17--23 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {https://proceedings.mlr.press/v162/bevan22a/bevan22a.pdf},
+  url = 	 {https://proceedings.mlr.press/v162/bevan22a.html},
 }
 ```
 ---
+
